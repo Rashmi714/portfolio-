@@ -13,6 +13,7 @@
       background: linear-gradient(135deg, #e6e6fa 20%, #c0f0e0 100%);
       color: #333;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     /* Navbar */
@@ -54,16 +55,10 @@
       padding: 40px 50px;
       border-radius: 18px;
       box-shadow: 0 10px 40px rgba(64, 61, 80, 0.2);
-      max-width: 750px;
+      max-width: 1200px;
       width: 90%;
       margin: 60px auto;
-      text-align: center;
       transition: 0.3s ease;
-    }
-
-    .projects-container:hover {
-      transform: scale(1.01);
-      box-shadow: 0 12px 45px rgba(64, 61, 80, 0.25);
     }
 
     h2 {
@@ -73,10 +68,19 @@
       margin-bottom: 30px;
     }
 
+    /* Horizontal project layout */
+    .project-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
     .project {
+      flex: 1 1 300px;
+      max-width: 350px;
       background: #f5f5ff;
       padding: 20px;
-      margin: 15px 0;
       border-radius: 15px;
       box-shadow: 0 3px 12px rgba(91, 75, 138, 0.1);
       text-align: left;
@@ -108,8 +112,9 @@
     }
 
     .back-btn {
-      display: inline-block;
-      margin-top: 25px;
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
       background: linear-gradient(to right, #88b6b2, #b9a2e6);
       color: white;
       padding: 12px 25px;
@@ -132,16 +137,13 @@
       margin: 25px 0;
     }
 
-    @media (max-width: 600px) {
-      .navbar {
+    @media (max-width: 768px) {
+      .project-list {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
       }
-      .navbar nav a {
-        margin: 8px;
-      }
-      .projects-container {
-        padding: 30px 25px;
+      .project {
+        max-width: 90%;
       }
     }
   </style>
@@ -160,28 +162,30 @@
   <div class="projects-container">
     <h2>💻 Projects Developed by Rashmi C</h2>
 
-    <div class="project">
-      <h3>Pharmacy Drug Management System <span>(2024)</span></h3>
-      <p>
-        A full-stack web application built using <strong>Flask and MySQL</strong> to manage pharmaceutical inventory efficiently. 
-        Features include user login, CRUD operations, and a secure search system for real-time tracking of medicines and stock levels.
-      </p>
-    </div>
+    <div class="project-list">
+      <div class="project">
+        <h3>Pharmacy Drug Management System <span>(2024)</span></h3>
+        <p>
+          A full-stack web application built using <strong>Flask and MySQL</strong> to manage pharmaceutical inventory efficiently. 
+          Features include user login, CRUD operations, and a secure search system for real-time tracking of medicines and stock levels.
+        </p>
+      </div>
 
-    <div class="project">
-      <h3>Weather Forecast App – Clim8 <span>(2024)</span></h3>
-      <p>
-        A visually appealing and animated weather app using <strong>HTML, CSS, and JavaScript</strong> with a real-time weather API. 
-        Provides location-based forecasts, weather icons, and dynamic visuals.
-      </p>
-    </div>
+      <div class="project">
+        <h3>Weather Forecast App – Clim8 <span>(2024)</span></h3>
+        <p>
+          A visually appealing and animated weather app using <strong>HTML, CSS, and JavaScript</strong> with a real-time weather API. 
+          Provides location-based forecasts, weather icons, and dynamic visuals.
+        </p>
+      </div>
 
-    <div class="project">
-      <h3>Car Rental System <span>(2025)</span></h3>
-      <p>
-        A PHP-based car rental management system that allows users to view, book, and manage cars. 
-        Includes admin tools for car updates and a <strong>MySQL</strong> database for secure management.
-      </p>
+      <div class="project">
+        <h3>Car Rental System <span>(2025)</span></h3>
+        <p>
+          A PHP-based car rental management system that allows users to view, book, and manage cars. 
+          Includes admin tools for car updates and a <strong>MySQL</strong> database for secure management.
+        </p>
+      </div>
     </div>
 
     <a href="index.html" class="back-btn">← Back to Home</a>
